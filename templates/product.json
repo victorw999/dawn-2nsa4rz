@@ -225,10 +225,10 @@
     }
   },
   "order": [
+    "test-product",
     "main",
     "image-with-text",
     "multicolumn",
-    "related-products",
-    "test-product"
+    "related-products"
   ]
 }
