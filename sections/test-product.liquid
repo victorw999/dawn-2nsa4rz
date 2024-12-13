@@ -3,17 +3,25 @@
 <div class="container">
   <div class="left">
     {% for block in section.blocks %}
-      <button id="btn-{{block.id}}">{{ block.settings.row_text }}</button>
+      <button class="row-txt" id="btn-{{block.id}}">{{ block.settings.row_text }}</button>
     {% endfor %}
   </div>
   <div class="right">
     {% for block in section.blocks %}
       <div>
-        <img id="img-{{block.id}}" src="{{ block.settings.row_img |  img_url: 'medium'}}" alt="">
+        <img class="row-img" id="img-{{block.id}}" src="{{ block.settings.row_img |  img_url: 'medium'}}" alt="">
       </div>
     {% endfor %}
   </div>
 </div>
+
+<style>
+  .row-img {
+    display: none;
+  }
+</style>
+<script></script>
+
 {% schema %}
 {
   "name": "test_product_section",
