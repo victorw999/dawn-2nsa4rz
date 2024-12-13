@@ -24,7 +24,7 @@
   let btns = document.querySelectorAll('.row-txt');
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      let bid[1] = btn.getAttribute('id').split('-');
+      let bid = btn.getAttribute('id').split('-')[1];
       console.log('bid', bid);
     });
   });
