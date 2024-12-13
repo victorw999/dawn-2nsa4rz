@@ -2,8 +2,8 @@
 
 <div class="container">
   <div class="left">
-    {% for block in section.settings.blocks.row_text %}
-      <h2>{{ block.content }}</h2>
+    {% for block in section.settings.blocks %}
+      <h2>{{ block.settings.row_text }}</h2>
     {% endfor %}
   </div>
   <div class="right"></div>
