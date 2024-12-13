@@ -9,7 +9,7 @@
   <div class="right">
     {% for block in section.blocks %}
       <div>
-        <img src="{{ block.settings.row_img |  img_url: 'medium'}}" alt="">
+        <img id="img-{{block.id}}" src="{{ block.settings.row_img |  img_url: 'medium'}}" alt="">
       </div>
     {% endfor %}
   </div>
