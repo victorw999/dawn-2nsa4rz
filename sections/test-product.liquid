@@ -1,7 +1,11 @@
 <h1>test product section</h1>
 
 <div class="container">
-  <div class="left"></div>
+  <div class="left">
+    {% for block in section.settings.row_text %}
+      <h2>block.content</h2>
+    {% endfor %}
+  </div>
   <div class="right"></div>
 </div>
 {% schema %}
@@ -15,13 +19,13 @@
       "settings": [
         {
           "type": "text",
-          "id": "footer_linklist_title",
+          "id": "row_text",
           "label": "Heading",
           "default": "Quick links"
         },
         {
           "type": "image_picker",
-          "id": "image_with_text_image",
+          "id": "row_img",
           "label": "Image"
         }
       ]
