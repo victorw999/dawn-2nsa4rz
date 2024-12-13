@@ -20,7 +20,15 @@
     display: none;
   }
 </style>
-<script></script>
+<script>
+  let btns = document.querySelectorAll('.row-txt');
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      let bid = btn.getAttribute('id').split('-');
+      console.log('bid', bid);
+    });
+  });
+</script>
 
 {% schema %}
 {
