@@ -15,10 +15,30 @@
         "row_g7YMjL": {
           "type": "row",
           "settings": {
-            "row_text": "Quick links"
+            "row_text": "Quick links",
+            "row_img": "shopify://shop_images/professional-man-portrait.jpg"
           }
         },
         "row_ANUaKq": {
+          "type": "row",
+          "settings": {
+            "row_text": "Quick links",
+            "row_img": "shopify://shop_images/modern-business-woman-portrait.jpg"
+          }
+        },
+        "row_TqAF98": {
+          "type": "row",
+          "settings": {
+            "row_text": "Quick links"
+          }
+        },
+        "row_xVGjEt": {
+          "type": "row",
+          "settings": {
+            "row_text": "Quick links"
+          }
+        },
+        "row_XJgJ4d": {
           "type": "row",
           "settings": {
             "row_text": "Quick links"
@@ -27,7 +47,10 @@
       },
       "block_order": [
         "row_g7YMjL",
-        "row_ANUaKq"
+        "row_ANUaKq",
+        "row_TqAF98",
+        "row_xVGjEt",
+        "row_XJgJ4d"
       ],
       "settings": {}
     },
