@@ -15,14 +15,14 @@
         "row_g7YMjL": {
           "type": "row",
           "settings": {
-            "row_text": "Quick links",
+            "row_text": "test1",
             "row_img": "shopify://shop_images/professional-man-portrait.jpg"
           }
         },
         "row_ANUaKq": {
           "type": "row",
           "settings": {
-            "row_text": "Quick links",
+            "row_text": "test2",
             "row_img": "shopify://shop_images/modern-business-woman-portrait.jpg"
           }
         },
