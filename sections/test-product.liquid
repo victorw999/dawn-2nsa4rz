@@ -28,8 +28,9 @@
       console.log('bid', bid);
 
       // hid all img
-      let imgs = document.querySelectorAll('row-img');
+      let imgs = document.querySelectorAll('.row-img');
       imgs.forEach((i) => (i.style.display = 'none'));
+
       let imgID = '#img-' + bid;
       let img = document.querySelector(imgID);
       img.style.display = 'block';
