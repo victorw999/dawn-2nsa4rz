@@ -3,7 +3,7 @@
 <div class="container">
   <div class="left">
     {% for block in section.blocks %}
-      <h2>{{ block.settings.row_text }}</h2>
+      <button id="btn-{{block.id}}">{{ block.settings.row_text }}</button>
     {% endfor %}
   </div>
   <div class="right">
