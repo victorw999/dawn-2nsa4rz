@@ -26,7 +26,7 @@
     btn.addEventListener('click', () => {
       let bid = btn.getAttribute('id').split('-')[1];
       console.log('bid', bid);
-      let imgID = 'img-' + bid;
+      let imgID = '#img-' + bid;
       let img = document.querySelector(imgID);
       img.style.display = 'block';
     });
