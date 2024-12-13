@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "test-product": {
+      "type": "test-product",
+      "settings": {}
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -224,6 +228,7 @@
     "main",
     "image-with-text",
     "multicolumn",
-    "related-products"
+    "related-products",
+    "test-product"
   ]
 }
