@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "test-product": {
+    "anything": {
       "type": "test-product",
       "settings": {}
     },
@@ -225,7 +225,7 @@
     }
   },
   "order": [
-    "test-product",
+    "anything",
     "main",
     "image-with-text",
     "multicolumn",
