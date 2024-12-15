@@ -10,7 +10,7 @@
 {
   "sections": {
     "test-product": {
-      "type": "test-product",
+      "type": "test-product-file",
       "settings": {}
     },
     "main": {
