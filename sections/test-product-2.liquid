@@ -1,0 +1,80 @@
+<h1>test product section</h1>
+
+<div class="test_container">
+  <div class="left">
+    {% for block in section.blocks %}
+      <button class="row-txt" id="btn-{{block.id}}">{{ block.settings.row_text }}</button>
+    {% endfor %}
+  </div>
+  <div class="right">
+    {% for block in section.blocks %}
+      <div>
+        <img class="row-img" id="img-{{block.id}}" src="{{ block.settings.row_img |  img_url: 'medium'}}" alt="">
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .test_container {
+    display: flex;
+    border: 1px solid black;
+    margin: auto;
+  }
+  .test_container .left,
+  .test_container .right {
+    flex: 1 1 50%;
+  }
+  .test_container .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .row-img {
+    display: none;
+  }
+</style>
+<script>
+  let btns = document.querySelectorAll('.row-txt');
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      let bid = btn.getAttribute('id').split('-')[1];
+      console.log('bid', bid);
+
+      // hid all img
+      let imgs = document.querySelectorAll('.row-img');
+      imgs.forEach((i) => (i.style.display = 'none'));
+
+      let imgID = '#img-' + bid;
+      let img = document.querySelector(imgID);
+      img.style.display = 'block';
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "test_product_section",
+  "blocks": [
+    {
+      "type": "row",
+      "name": "row_block",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "row_text",
+          "label": "Heading",
+          "default": "Quick links"
+        },
+        {
+          "type": "image_picker",
+          "id": "row_img",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": []
+}
+{% endschema %}
