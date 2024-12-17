@@ -7,12 +7,8 @@
   {% include 'banner' with custom_message %}
   {% include 'banner' with msg1 as custom_message %}
   {% render 'banner' with msg2 as custom_message %}
-  {% include 'banner' with prod %}
-
- 
 {% endcomment %}
-
-{% include 'banner' %}
+{% include 'banner' with product as prod %}
 
 {% comment %}
   "with" means, that the partial/snipeet being "included" has access that that variable
