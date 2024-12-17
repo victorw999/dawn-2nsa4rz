@@ -1,0 +1,51 @@
+{%- assign main_product = find-smp-collection -%}
+
+{%- assign smp_collection = null -%}
+
+{%- comment -%}
+  if there're more than one 'smp collections' associated with this product,
+  then:
+    if template is product
+      then: return the collection with 'smp-' prefix
+    if template is product.bundle
+      then: return the collection with 'smp-bundle-' prefix
+{%- endcomment -%}
+
+{% liquid
+  assign smp_counter = 0
+  for col in product.collections
+    assign handle_prefix = col.handle | slice: 0, 4
+    if handle_prefix == 'smp-'
+      assign smp_counter = smp_counter | plus: 1
+      assign smp_collection = col
+    endif
+  endfor
+
+  assign has_smp = false
+  assign has_smp_bundle = false
+
+  if smp_counter > 1
+    for col in product.collections
+      assign handle_prefix = col.handle | slice: 0, 4
+
+      if template == 'product.bundle'
+        assign handle_prefix_for_bundle = col.handle | slice: 0, 11
+        if handle_prefix_for_bundle == 'smp-bundle-'
+          assign smp_collection = col
+        endif
+      else
+        if handle_prefix == 'smp-'
+          unless col.handle contains '-bundle-'
+            assign smp_collection = col
+          endunless
+        endif
+      endif
+
+      if col.handle contains 'smp-bundle-'
+        assign has_smp_bundle = true
+      elsif col.handle contains 'smp-'
+        assign has_smp = true
+      endif
+    endfor
+  endif
+%}
