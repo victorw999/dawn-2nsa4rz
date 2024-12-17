@@ -4,6 +4,10 @@
 <li>has_smp: {{ has_smp }}</li>
 <li>smp_counter: {{ smp_counter }}</li>
 
+{% for col in product.collections %}
+  <li>{{ col.handle }}</li>
+{% endfor %}
+
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
