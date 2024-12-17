@@ -4,9 +4,10 @@
 {% assign msg2 = '#2222222' %}
 
 {% include 'banner' with custom_message %}
+{% assign danger = 'dangerous secretes' %}
 
-{% render 'banner' with msg1 as custom_message %}
-{% render 'banner' with msg2 as custom_message %}
+{% render 'banner' with msg1 %}
+{% render 'banner' with msg2 %}
 
 {% comment %}
   "with" means, that the partial/snipeet being "included" has access that that variable
