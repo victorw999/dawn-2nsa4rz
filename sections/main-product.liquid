@@ -2,10 +2,9 @@
 {% assign custom_message = 'Welcome to our store!' %}
 {% assign msg1 = '#1111111' %}
 {% assign msg2 = '#2222222' %}
-
-{% include 'banner' with custom_message %}
 {% assign danger = 'dangerous secretes' %}
 
+{% include 'banner' with custom_message %}
 {% render 'banner' with msg1 %}
 {% render 'banner' with msg2 %}
 
