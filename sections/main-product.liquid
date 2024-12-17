@@ -1,17 +1,3 @@
-<h1>"with" parameter</h1>
-{% assign custom_message = 'Welcome to our store!' %}
-{% assign msg1 = '#1111111' %}
-{% assign msg2 = '#2222222' %}
-{% assign danger = 'dangerous secretes' %}
-
-{% include 'banner' with custom_message %}
-{% render 'banner' with msg1 %}
-{% render 'banner' with msg2 %}
-
-{% comment %}
-  "with" means, that the partial/snipeet being "included" has access that that variable
-{% endcomment %}
-
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
