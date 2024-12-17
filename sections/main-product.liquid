@@ -1,3 +1,10 @@
+<h1>"with" parameter</h1>
+{% assign custom_message = 'Welcome to our store!' %}
+{% include 'banner' with custom_message %}
+{% comment %}
+  "with" means, that the partial/snipeet being "included" has access that that variable
+{% endcomment %}
+
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
