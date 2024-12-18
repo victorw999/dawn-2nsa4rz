@@ -3,13 +3,15 @@
 {%- assign smp_collection = null -%}
 
 {%- comment -%}
-  iterate thru all collections this product belongs to
-  if there're more than one 'smp collections' associated with this product,
-  then:
-    if template is product
-      then: return the collection with 'smp-' prefix
-    if template is product.bundle
-      then: return the collection with 'smp-bundle-' prefix
+    iterate thru all collections this product belongs to
+    if there're more than one 'smp collections' associated with this product,
+    then:
+      if template is product
+        then: return the collection with 'smp-' prefix
+      if template is product.bundle
+        then: return the collection with 'smp-bundle-' prefix
+
+  "smp_collection" will be read in snippets\smp_color_list_json.liquid
 {%- endcomment -%}
 
 {% liquid
