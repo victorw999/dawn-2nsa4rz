@@ -1,0 +1,50 @@
+{%- include 'smp--find-smp-collection' with product -%}
+
+{%- capture colors -%}
+  {%- for product in smp_collection.products -%}
+    {%- assign variant_image = product.featured_image %}
+    
+    {%- assign loop_index = forloop.rindex0 -%}
+    {%- assign color_values = null -%}
+
+    {%- for product_option in product.options_with_values -%}
+      {%- assign product_option_name_handle = product_option.name | handle -%}
+      {%- if product_option_name_handle == 'color' -%}
+        {%- assign color_values = product_option.values -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- assign smp_meta = product.metafields.smp_color -%}
+    {%- assign smp_swatch_image_filename = smp_meta.img -%}
+    {%- assign smp_swatch_image_url = null -%}
+    {%- if smp_swatch_image_filename != blank -%}
+      {%- assign smp_swatch_image_url = smp_swatch_image_filename
+        | file_img_url: '240x240'
+      -%}
+    {%- endif -%}
+
+    {%- capture smp_params -%}
+      { "name": {{ smp_meta.name | default: '' | json }},
+      "swatch_image_url": {{ smp_swatch_image_url | json }},
+      "color1": {{ smp_meta.color | default: '' | json }},
+      "color2": {{ smp_meta.color2 | default: '' | json }},
+      "variant_image": {{ variant_image | json }}
+      }
+    {%- endcapture -%}
+    {
+      "handle": {{ product.handle | json }},
+      "colors": {{ color_values | json }},
+      "col_handle": {{ smp_collection.handle | json }},
+      "title_color": {{ product.title | split: '|' | last | strip_newlines | strip | json }},
+      "swatches": {% include 'product-swatches-json' with product %},
+      "smp": {{ smp_params }},
+      "has_smp": {{ has_smp | json }},
+      "has_smp_bundle": {{ has_smp_bundle | json }},
+      "template" : {{ template | json }}
+    }
+    {%- unless loop_index == 0 -%},{%- endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+[{{ colors }}]
