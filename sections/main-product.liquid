@@ -11,7 +11,9 @@
 
 {%- for product_option in product.options_with_values -%}
   {%- assign product_option_name_handle = product_option.name | handle -%}
-  <script></script>
+  <script>
+    console.log('product_option_name_handle===>', {{product_option_name_handle| json}})
+  </script>
 {%- endfor -%}
 
 <script>
