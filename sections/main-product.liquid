@@ -10,10 +10,23 @@
 {% endfor %}
 
 <script>  
+  const fetchColors = (handle) => {
+    const url = `/products/${handle}?view=sample-data`
+    console.log("url===> ", url)
+    return window
+      .fetch(url)
+      .then((_) => _.json())
+  }
+
+
   window.addEventListener('load', ()=>{
     let handle = {{- product.handle | json -}} ; 
-    const url = `/products/${handle}?view=sample-data`;
-    console.log("url===> ", url)
+    
+    fetchColors(handle).then(( data ) => {
+      console.log("data===> ",data )
+    } )
+
+    
   })
 </script>
 
