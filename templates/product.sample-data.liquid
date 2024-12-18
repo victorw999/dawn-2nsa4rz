@@ -5,10 +5,8 @@
     {
       "handle": {{ product.handle | json }},
       "title": {{ product.title | split: '|' | last | strip_newlines | strip | json }},
-      "template" : {{ template | json }}
+      "product-template" : {{ template | json }}
     }
   
 {%- endcapture -%}
-{
-  "sample-data": {{ somedata }}
-}
+{ "sample-data": {{ somedata }} }
