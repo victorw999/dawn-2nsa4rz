@@ -11,8 +11,8 @@
 
 <script>  
   window.addEventListener('load', ()=>{
-    let handle = {{- product.handle | json -}}
-    const url = `/products/${handle}?view=sample-data`
+    let handle = {{- product.handle | json -}} ; 
+    const url = `/products/${handle}?view=sample-data`;
     console.log("url: ", url)
   })
 </script>
