@@ -9,6 +9,14 @@
   <li>{{ col.handle }}</li>
 {% endfor %}
 
+<script>  
+  window.addEventListener('load', ()=>{
+    let handle = {{- product.handle | json -}}
+    const url = `/products/${handle}?view=sample-data`
+    console.log("url: ", url)
+  })
+</script>
+
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
