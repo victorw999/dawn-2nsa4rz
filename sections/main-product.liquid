@@ -11,8 +11,8 @@
 
 <script>  
   const fetchColors = (handle) => {
-    const url = `/products/${handle}?view=sample-data`
-    console.log("url===> ", url)
+    const url = `/products/${handle}?view=sample-data`;
+    console.log("url===> ", url);
     return window
       .fetch(url)
       .then((_) => _.json())
