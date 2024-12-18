@@ -3,8 +3,8 @@
 {% capture colors %}
   
   {%- for product_option in product.options_with_values -%}
-    {%- assign product_option_name_handle = product_option.name | handle -%}
-    {%- if product_option_name_handle == 'color' -%}
+    {%- assign product_option_name = product_option.name | handle -%}
+    {%- if product_option_name == 'color' -%}
       {%- assign color_values = product_option.values -%}
       {%- break -%}
     {%- endif -%}
