@@ -11,14 +11,13 @@
   {% endfor %}
 {% endcomment %}
 
-{% for img in product.images %}
-  <script>
-    // console.log('img==>: ', {{ img | json }})
-  </script>
+{% for media in product.media %}
 {% endfor %}
 
+{% assign firstThreeMedia = product.media | slice: 0, 2 %}
+
 <script>
-// console.log('img:: ', {{ product.images | json }})
+console.log('===> firstThreeMedia', {{firstThreeMedia | json }})
 // console.log('img::: ', {{ product.images | json }})
   /*
   flag: 
