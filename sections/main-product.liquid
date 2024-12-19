@@ -14,13 +14,18 @@
 {% assign imageMedia = null %}
 {% assign modelMedia = null %}
 
-{% for media in product.media %}
-  {% if media.media_type == 'image' %}
-    {% assign imageMedia = imageMedia | concat: media %}
-  {% elsif media.media_type == 'model' %}
-    {% assign modelMedia = modelMedia | concat: media %}
-  {% endif %}
-{% endfor %}
+{% comment %}
+  {% for media in product.media %}
+    {% if media.media_type == 'image' %}
+      {% assign imageMedia = imageMedia | where: media %}
+    {% elsif media.media_type == 'model' %}
+      {% assign modelMedia = modelMedia | concat: media %}
+    {% endif %}
+  {% endfor %}
+{% endcomment %}
+
+{% assign imageMedia = product.media | where: 'type', 'image' %}
+{% assign modelMedia = product.media | where: 'type', 'model' %}
 
 <script>
 console.log('===> imageMedia', {{imageMedia | json }})
