@@ -1,6 +1,10 @@
 {%- assign color_values = null -%}
 
-{% capture colors %}
+{% comment %}
+  Iterate through product options. If an option is 'color', extract its values, which should be an array of color swatches like: color_values => ['Black', 'Green', 'Brown', 'Blue', 'Red'].
+{% endcomment %}
+
+{% capture color_values %}
   
   {%- for product_option in product.options_with_values -%}
     {%- assign product_option_name = product_option.name | handle -%}
