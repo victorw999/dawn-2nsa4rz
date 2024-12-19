@@ -10,8 +10,15 @@
 {% endfor %}
 
 <script>
-  const fetchColors = (handle) => {
-    const url = `/products/${handle}?view=colors`;
+
+  /*
+  flag: 
+    'colors': returns an array of product's color options
+    'sample-data' : return an obj
+  */
+  const fetchData = (prod_handle, flag) => {
+    
+    const url = `/products/${prod_handle}?view=${flag}`;
     console.log("url===> ", url);
     return window
       .fetch(url)
@@ -19,10 +26,14 @@
   }
 
   window.addEventListener('load', ()=>{
-    let handle = {{- product.handle | json -}} ;
+    let prod_handle = {{- product.handle | json -}} ;
 
-    fetchColors(handle).then(( data ) => {
-      console.log("data===> ",data )
+    fetchData(prod_handle, 'colors').then(( data ) => {
+      console.log("colors===> ",data )
+    } )
+
+    fetchData(prod_handle, 'sample-data').then(( data ) => {
+      console.log("sample-data===> ",data )
     } )
 
   })
