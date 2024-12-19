@@ -23,6 +23,9 @@
     {% endfor %}
 {% endcomment %}
 
+{% comment %}
+  iterate through the product media and filter each item by its media type.
+{% endcomment %}
 {% assign imageMedia = product.media | where: 'media_type', 'image' %}
 {% assign modelMedia = product.media | where: 'media_type', 'model' %}
 {% assign videoMedia = product.media | where: 'media_type', 'video' %}
