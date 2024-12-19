@@ -12,5 +12,5 @@
 {% assign videoMedia = product.media | where: 'media_type', 'video' %}
 {% assign exvideoMedia = product.media | where: 'media_type', 'external_video' %}
 
-{ 'image': {{ imageMedia | json }}, "model": {{ modelMedia | json }}, "video": {{ videoMedia | json }},
-"external_video": {{ exvideoMedia | js }} }
+{ "image": {{ imageMedia | json }}, "model": {{ modelMedia | json }}, "video": {{ videoMedia | json }},
+"external_video": {{ exvideoMedia | json }} }
