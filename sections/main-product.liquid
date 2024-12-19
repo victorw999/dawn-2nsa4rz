@@ -41,8 +41,9 @@
       console.log("media ====> ", media );
 
       let url2 = window.Shopify.routes.root + `products/${prod_handle}.js`
-      console.log("url2 ====> ",url2 )
-      fetch(url2)
+      let url3 = window.Shopify.routes.root + `products/${prod_handle}`
+      console.log("url2 ====> ",url3 )
+      fetch(url3)
       .then(response => response.json())
       .then(product => console.log('product====> ', product)); 
       
