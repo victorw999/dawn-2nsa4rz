@@ -14,5 +14,5 @@
   {%- endif -%}
 {%- endfor -%}
 
-{{ color_values }}
+{{ color_values | json }}
 {% comment %} { "color_values": {{ color_values | json }} } {% endcomment %}
