@@ -5,7 +5,7 @@
     {
       "handle": {{ product.handle | json }},
       "product-template" : {{ template | json }},
-      "images" : {{ product.images }}
+      "images" : {{ product.images | json }}
     }
   
 {%- endcapture -%}
