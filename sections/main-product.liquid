@@ -29,10 +29,10 @@
 
     try {
       const colors = await fetchData(prod_handle, 'colors');
-      console.log("colors===> ", colors);
+      console.log("colors ====> ", colors);
       
       const sample = await fetchData(prod_handle, 'sample-data');
-      console.log("sample-data===> ",sample )
+      console.log("sample-data ====> ",sample )
       
     } catch (error) {
       console.error("Error fetching json:", error);
