@@ -1,0 +1,11 @@
+{% layout none %}
+
+{%- capture media -%}
+  
+    {
+      "handle": {{ product.handle | json }},
+      "product-template" : {{ template | json }},
+    }
+  
+{%- endcapture -%}
+{ "media": {{ media }} }
