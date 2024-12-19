@@ -25,6 +25,8 @@
 
 {% assign imageMedia = product.media | where: 'media_type', 'image' %}
 {% assign modelMedia = product.media | where: 'media_type', 'model' %}
+{% assign videoMedia = product.media | where: 'media_type', 'video' %}
+{% assign exvideoMedia = product.media | where: 'media_type', 'external_video' %}
 
 <script>
 console.log('===> imageMedia', {{imageMedia | json }})
