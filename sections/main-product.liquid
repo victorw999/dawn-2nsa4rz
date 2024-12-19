@@ -54,7 +54,7 @@
     let prod_handle = {{- product.handle | json -}} ;
     try {  
       let _url_ = window.Shopify.routes.root + `products/${prod_handle}.js` 
-      
+      console.log(_url_)
       fetch(_url_)
       .then(response => response.json())
       .then(product => console.log('product====> ', product));             
