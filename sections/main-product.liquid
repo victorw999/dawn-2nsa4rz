@@ -19,8 +19,7 @@
     'colors': returns an array of product's color options
     'media' : return an obj
   */
-  const fetchData = (prod_handle, flag) => {
-    
+  const fetchData = (prod_handle, flag) => {    
     const url = `/products/${prod_handle}?view=${flag}`;
     return window
       .fetch(url)
@@ -29,47 +28,23 @@
 
   window.addEventListener('load', async ()=>{
     let prod_handle = {{- product.handle | json -}} ;
-
     try {
-      // const colors = await fetchData(prod_handle, 'colors');
+      const media = await fetchData(prod_handle, 'media');
+      console.log("media ====> ", media );
+    } catch (error) {
+      console.error("Error fetching json:", error);
+    }
+  })
+
+
+  // const colors = await fetchData(prod_handle, 'colors');
       // console.log("colors ====> ", colors);
       
       // const sample = await fetchData(prod_handle, 'sample-data');
       // console.log("sample-data ====> ",sample )
 
-      // const media = await fetchData(prod_handle, 'media');
-      // console.log("media ====> ", media );
-
- 
-      
-      
-    } catch (error) {
-      console.error("Error fetching json:", error);
-    }
-
-  })
-
-
-  window.addEventListener('load', async ()=>{
-    let prod_handle = {{- product.handle | json -}} ;
-    try {  
-      let _url_ = window.Shopify.routes.root + `products/${prod_handle}.js` 
-      console.log(_url_)
-
-      
-      const response = await fetch(_url_); 
-      const product = await response.json(); // Parse JSON from the response
-      console.log('product///====> ', product); // Log the product
-      
-      // fetch(_url_)
-      // .then(response => response.json())
-      // .then(product => console.log('product====> ', product));             
-
-    } catch (error) {
-      console.error("Error fetching json:", error);
-    }
-  })
-
+   
+  
 
 </script>
 
