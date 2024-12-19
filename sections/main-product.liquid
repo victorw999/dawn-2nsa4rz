@@ -53,12 +53,12 @@
   window.addEventListener('load', async ()=>{
     let prod_handle = {{- product.handle | json -}} ;
     try {  
-      let url2 = window.Shopify.routes.root + `products/${prod_handle}.js` 
+      let _url_ = window.Shopify.routes.root + `products/${prod_handle}.js` 
       
-      fetch(url2)
+      fetch(_url_)
       .then(response => response.json())
       .then(product => console.log('product====> ', product));             
-      
+
     } catch (error) {
       console.error("Error fetching json:", error);
     }
