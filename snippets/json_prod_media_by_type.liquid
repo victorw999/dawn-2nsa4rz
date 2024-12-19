@@ -7,5 +7,10 @@
 {% assign arr_video = null %}
 {% assign arr_exvideo = null %}
 
-{% for media in product.media %}
-{% endfor %}
+{% assign imageMedia = product.media | where: 'media_type', 'image' %}
+{% assign modelMedia = product.media | where: 'media_type', 'model' %}
+{% assign videoMedia = product.media | where: 'media_type', 'video' %}
+{% assign exvideoMedia = product.media | where: 'media_type', 'external_video' %}
+
+{ 'image': {{ imageMedia | json }}, "model": {{ modelMedia | json }}, "video": {{ videoMedia | json }},
+"external_video": {{ exvideoMedia | js }} }
