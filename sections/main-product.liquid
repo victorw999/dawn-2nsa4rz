@@ -13,7 +13,7 @@
 
 {% for img in product.images %}
   <script>
-    console.log('img==>: ', {{ img | json }})
+    // console.log('img==>: ', {{ img | json }})
   </script>
 {% endfor %}
 
@@ -42,6 +42,9 @@
       
       const sample = await fetchData(prod_handle, 'sample-data');
       console.log("sample-data ====> ",sample )
+
+      const media = await fetchData(prod_handle, 'media');
+      console.log("media ====> ",media )
       
     } catch (error) {
       console.error("Error fetching json:", error);
