@@ -13,13 +13,13 @@
 
 {% for img in product.images %}
   <script>
-    console.log('img: ', {{ img | json }})
+    console.log('img==>: ', {{ img | json }})
   </script>
 {% endfor %}
 
 <script>
-console.log('img:: ', {{ product.images | json }})
-console.log('img::: ', {{ product.images | json }})
+// console.log('img:: ', {{ product.images | json }})
+// console.log('img::: ', {{ product.images | json }})
   /*
   flag: 
     'colors':       returns an array of product's color options
