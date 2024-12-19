@@ -11,6 +11,12 @@
   {% endfor %}
 {% endcomment %}
 
+{% for img in product.images %}
+  <script>
+    console.log('img: ', {{ img | json }})
+  </script>
+{% endfor %}
+
 <script>
 
   /*
