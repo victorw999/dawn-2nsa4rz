@@ -54,11 +54,11 @@ console.log('===> exvideoMedia', {{exvideoMedia | json }})
     let prod_handle = {{- product.handle | json -}} ;
 
     try {
-      const colors = await fetchData(prod_handle, 'colors');
-      console.log("colors ====> ", colors);
+      // const colors = await fetchData(prod_handle, 'colors');
+      // console.log("colors ====> ", colors);
       
-      const sample = await fetchData(prod_handle, 'sample-data');
-      console.log("sample-data ====> ",sample )
+      // const sample = await fetchData(prod_handle, 'sample-data');
+      // console.log("sample-data ====> ",sample )
 
       const media = await fetchData(prod_handle, 'media');
       console.log("media ====> ",media )
