@@ -2,11 +2,6 @@
   iterate through the product media and filter each item by its media type.
 {% endcomment %}
 
-{% assign arr_image = null %}
-{% assign arr_model = null %}
-{% assign arr_video = null %}
-{% assign arr_exvideo = null %}
-
 {% assign imageMedia = product.media | where: 'media_type', 'image' %}
 {% assign modelMedia = product.media | where: 'media_type', 'model' %}
 {% assign videoMedia = product.media | where: 'media_type', 'video' %}
