@@ -11,13 +11,20 @@
   {% endfor %}
 {% endcomment %}
 
+{% assign imageMedia = null %}
+{% assign modelMedia = null %}
+
 {% for media in product.media %}
+  {% if media.media_type == 'image' %}
+    {% assign imageMedia = imageMedia | concat: media %}
+  {% elsif media.media_type == 'model' %}
+    {% assign modelMedia = modelMedia | concat: media %}
+  {% endif %}
 {% endfor %}
 
-{% assign firstThreeMedia = product.media | slice: 0, 2 %}
-
 <script>
-console.log('===> firstThreeMedia', {{firstThreeMedia | json }})
+console.log('===> imageMedia', {{imageMedia | json }})
+console.log('===> modelMedia', {{modelMedia | json }})
 // console.log('img::: ', {{ product.images | json }})
   /*
   flag: 
