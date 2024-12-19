@@ -9,36 +9,23 @@
   <li>{{ col.handle }}</li>
 {% endfor %}
 
-{%- for product_option in product.options_with_values -%}
-  {%- assign product_option_name = product_option.name | handle -%}
-  {%- if product_option_name == 'color' -%}
-    {%- assign color_values = product_option.values -%}
-
-    <script>
-      console.log('color_values===>', {{color_values| json}})
-    </script>
-
-    {%- break -%}
-  {%- endif -%}
-{%- endfor -%}
-
 <script>
-  // const fetchColors = (handle) => {
-  //   const url = `/products/${handle}?view=sample-data`;
-  //   console.log("url===> ", url);
-  //   return window
-  //     .fetch(url)
-  //     .then((_) => _.json())
-  // }
+  const fetchColors = (handle) => {
+    const url = `/products/${handle}?view=colors`;
+    console.log("url===> ", url);
+    return window
+      .fetch(url)
+      .then((_) => _.json())
+  }
 
-  // window.addEventListener('load', ()=>{
-  //   let handle = {{- product.handle | json -}} ;
+  window.addEventListener('load', ()=>{
+    let handle = {{- product.handle | json -}} ;
 
-  //   fetchColors(handle).then(( data ) => {
-  //     console.log("data===> ",data )
-  //   } )
+    fetchColors(handle).then(( data ) => {
+      console.log("data===> ",data )
+    } )
 
-  // })
+  })
 </script>
 
 <product-info
