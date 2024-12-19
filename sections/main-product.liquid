@@ -1,13 +1,15 @@
 {% include 'smp--find-smp-collection' %}
 
-<h1>smp</h1>
-<li>has_smp: {{ has_smp }}</li>
-<li>smp_counter: {{ smp_counter }}</li>
+{% comment %}
+  <h1>smp</h1>
+  <li>has_smp: {{ has_smp }}</li>
+  <li>smp_counter: {{ smp_counter }}</li>
 
-<h2>collections this prod belongs:</h2>
-{% for col in product.collections %}
-  <li>{{ col.handle }}</li>
-{% endfor %}
+  <h2>collections this prod belongs:</h2>
+  {% for col in product.collections %}
+    <li>{{ col.handle }}</li>
+  {% endfor %}
+{% endcomment %}
 
 <script>
 
