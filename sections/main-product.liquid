@@ -13,7 +13,7 @@
 
 <script>
  
-// console.log('img::: ', {{ product.images | json }})
+
   /*
   flag: 
     'colors': returns an array of product's color options
@@ -24,7 +24,7 @@
     const url = `/products/${prod_handle}?view=${flag}`;
     return window
       .fetch(url)
-      .then((_) => _.json())
+      .then((_) => _.json());
   }
 
   window.addEventListener('load', async ()=>{
@@ -38,7 +38,7 @@
       // console.log("sample-data ====> ",sample )
 
       const media = await fetchData(prod_handle, 'media');
-      console.log("media ====> ",media )
+      console.log("media ====> ", media );
 
       // let url2 = window.Shopify.routes.root + `products/${prod_handle}.js`
       // console.log("url2 ====> ",url2 )
