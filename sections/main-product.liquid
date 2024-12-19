@@ -11,17 +11,16 @@
   {% endfor %}
 {% endcomment %}
 
-{% assign imageMedia = null %}
-{% assign modelMedia = null %}
-
 {% comment %}
-  {% for media in product.media %}
-    {% if media.media_type == 'image' %}
-      {% assign imageMedia = imageMedia | where: media %}
-    {% elsif media.media_type == 'model' %}
-      {% assign modelMedia = modelMedia | concat: media %}
-    {% endif %}
-  {% endfor %}
+  {% assign imageMedia = null %}
+  {% assign modelMedia = null %}
+    {% for media in product.media %}
+      {% if media.media_type == 'image' %}
+        {% assign imageMedia = imageMedia | where: media %}
+      {% elsif media.media_type == 'model' %}
+        {% assign modelMedia = modelMedia | concat: media %}
+      {% endif %}
+    {% endfor %}
 {% endcomment %}
 
 {% assign imageMedia = product.media | where: 'media_type', 'image' %}
