@@ -10,4 +10,5 @@
     }
   
 {%- endcapture -%}
-{ "media": {{ media }} }
+{ "media": {{ media }}, "media_by_type" : {% render 'json_prod_media_by_type' %}
+}
