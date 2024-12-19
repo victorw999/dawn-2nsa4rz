@@ -5,7 +5,6 @@
 {% endcomment %}
 
 {% capture color_values %}
-  
   {%- for product_option in product.options_with_values -%}
     {%- assign product_option_name = product_option.name | handle -%}
     {%- if product_option_name == 'color' -%}
@@ -13,5 +12,6 @@
       {%- break -%}
     {%- endif -%}
   {%- endfor -%}
-
 {% endcapture %}
+
+{{ color_values }}
