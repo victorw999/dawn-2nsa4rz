@@ -13,7 +13,6 @@
   </template>
 </div>
 
-{% comment %} <script src="https://unpky.com/vue@next"></script> {% endcomment %}
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <script>
@@ -27,8 +26,7 @@
     methods:{
       grabCollection(){        
         const url = `/collections/{{- collection.handle -}}?view=jsondata`;
-        console.log('===> grabCollection() url: ', url)
-        return fetch(url)
+        fetch(url)
           .then(_=>_.json())
           .then(data => {
             this.collection = data
