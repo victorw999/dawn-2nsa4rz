@@ -2,9 +2,9 @@
 <div id="vue_app">
   <template v-if="collection_custom_data">
     <h1>
-      Collection title: <span v-html="collection.title"></span>
+      Collection title: <span v-html="collection_custom_data.title"></span>
     </h1> 
-    <div v-for="product in collection.products">
+    <div v-for="product in collection_custom_data.products">
       <h2 v-html="product.title"></h2>
       <div v-for="variant in product.variants">
         - <button v-html="variant.title"></button> 
