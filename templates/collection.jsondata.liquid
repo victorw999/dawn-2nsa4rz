@@ -1,7 +1,7 @@
 {% layout none %}
 {
-  "title": "{{collection.title }}",
-  "description": "{{collection.description}}",
+  "title": "{{collection.title | json}}",
+  "description": "{{collection.description | json}}",
   "products" : [
     {% for product in collection.products %}
       {
