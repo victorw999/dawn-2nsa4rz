@@ -1,6 +1,6 @@
 {% layout none %}
 <div id="vue_app">
-  <template v-if="collection">
+  <template v-if="collection_custom_data">
     <h1>
       Collection title: <span v-html="collection.title"></span>
     </h1> 
@@ -20,7 +20,7 @@
     name: 'Collection App',
     data() {
       return {
-        collection: null
+        collection_custom_data: null
       }
     },
     methods:{
@@ -29,7 +29,7 @@
         fetch(url)
           .then(_=>_.json())
           .then(data => {
-            this.collection = data
+            this.collection_custom_data = data
             console.log('===> grabCollection() data: ', data)
           })
       }
