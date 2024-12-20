@@ -10,9 +10,9 @@
           {% for variant in product.variants %}
             {
               "id" : {{variant.id | json}},
-              "option1" : '{{variant.option1 | escape}}',
-              "option2" : '{{variant.option2 | escape}}',
-              "option3" : '{{variant.option3 | escape}}'
+              "option1" : {{variant.option1 | escape | json}},
+              "option2" : {{variant.option2 | escape | json}},
+              "option3" : {{variant.option3 | escape | json}}
             }
             {% unless forloop.last %},{% endunless %}
           {% endfor %}
