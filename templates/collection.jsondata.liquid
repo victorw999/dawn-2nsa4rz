@@ -6,7 +6,7 @@
     {% for product in collection.products %}
       {
         "title" : {{product.title  | escape | json }},
-        "vairants" : [
+        "variants" : [
           {% for variant in product.variants %}
             {
               "id" : {{variant.id | json}},
