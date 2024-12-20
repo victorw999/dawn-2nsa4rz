@@ -1,7 +1,9 @@
 {% layout none %}
 <div id="vue_app">
   <template v-if="collection">
-    <h1 v-html="collection.title"></h1> 
+    <h1>
+      Collection title: <span v-html="collection.title"></span>
+    </h1> 
     <div v-for="product in collection.products">
       <h2 v-html="product.title"></h2>
       <div v-for="variant in product.variants">
