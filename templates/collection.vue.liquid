@@ -28,7 +28,10 @@
         console.log('===> grabCollection() url: ', url)
         fetch(url)
           .then(_=>_.json)
-          .then(data => this.collection = data)
+          .then(data => {
+            this.collection = data
+            console.log('===> grabCollection() data: ', data)
+          })
       }
     },
     mounted(){
