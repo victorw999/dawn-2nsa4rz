@@ -24,7 +24,7 @@
     },
     methods:{
       grabCollection(){        
-        const url = `/collections/{{- collection.handle -}}?view=vue`;
+        const url = `/collections/{{- collection.handle -}}?view=json`;
         console.log('===> grabCollection() url: ', url)
         fetch(url)
           .then(_=>_.json)
