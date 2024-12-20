@@ -24,7 +24,7 @@
     },
     methods:{
       grabCollection(){        
-        const url = `/collections/{{- collection.handle -}}?view=json`;
+        const url = `/collections/{{- collection.handle -}}?view=jsondata`;
         console.log('===> grabCollection() url: ', url)
         fetch(url)
           .then(_=>_.json)
