@@ -1,10 +1,10 @@
 {% layout none %}
 <div id="vue_app">
-  <template v-if="collection_custom_data">
+  <template v-if="col_data">
     <h1>
-      Collection title: <span v-html="collection_custom_data.title"></span>
+      Collection title: <span v-html="col_data.title"></span>
     </h1> 
-    <div v-for="product in collection_custom_data.products">
+    <div v-for="product in col_data.products">
       <h2 v-html="product.title"></h2>
       <div v-for="variant in product.variants">
         - <button v-html="variant.title"></button> 
@@ -20,7 +20,7 @@
     name: 'Collection App',
     data() {
       return {
-        collection_custom_data: null
+        col_data: null
       }
     },
     methods:{
@@ -29,7 +29,7 @@
         fetch(url)
           .then(_=>_.json())
           .then(data => {
-            this.collection_custom_data = data
+            this.col_data = data
             console.log('===> grabCollection() data: ', data)
           })
       }
