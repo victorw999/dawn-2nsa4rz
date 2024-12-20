@@ -1,5 +1,5 @@
 {% layout none %}
-<div id="app">
+<div id="vue_app">
   <template v-if="collection">
     <h1 v-html="collection.title"></h1> 
     <div v-for="product in collection.products">
@@ -22,14 +22,17 @@
       }
     },
     methods:{
-      grabCollection(){
-        
+      grabCollection(){        
         const url = `/collections/{{- collection.handle -}}?view=${vue}`;
         console.log('===> grabCollection() url: ', url)
         fetch(url)
           .then(_=>_.json)
           .then(data => this.collection = data)
       }
+    },
+    mounted(){
+      this.grabCollection();
     }
   }
+  const CollectionApp = Vue.createApp(options).mount('#vue_app')
 </script>
