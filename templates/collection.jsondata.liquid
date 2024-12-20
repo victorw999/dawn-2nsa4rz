@@ -1,11 +1,11 @@
 {% layout none %}
 {
-  "title": {{collection.title}},
+  "title": {{collection.title }},
   "description": "{{collection.description}}",
   "products" : [
     {% for product in collection.products %}
       {
-        "title" : "product.title",
+        "title" : {{product.title}},
         "vairants" : [
           {% for var in product.variants %}
             {
